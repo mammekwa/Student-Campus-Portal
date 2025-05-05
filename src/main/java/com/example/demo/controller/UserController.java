@@ -27,8 +27,13 @@ public class UserController {
     }
     //Get all Users REST API
     @GetMapping
-    public ResponseEntity getAllStudents(){
+    public ResponseEntity<List> getAllStudents(){
         List users = userService.getAllUsers();
         return ResponseEntity.ok(users);
+    }
+    @PutMapping("{id}")
+    public ResponseEntity<UserDto> updatePassword(@PathVariable("id") Long userId, @RequestBody UserDto password){
+        UserDto userDto = userService.updatePassword(userId,password);
+        return ResponseEntity.ok(userDto);
     }
 }
