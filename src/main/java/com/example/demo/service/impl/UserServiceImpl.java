@@ -7,14 +7,11 @@ import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.lang.module.ResolutionException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import com.example.demo.security.SecurityConfig;
 
 @Service
 @AllArgsConstructor
@@ -38,7 +35,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List getAllUsers() {
+    public List<UserDto> getAllUsers() {
         List<User> Users = userRepository.findAll();
         return Users.stream().map((User)->UserMapper.mapToUserDto(User))
                 .collect(Collectors.toList());

@@ -7,6 +7,6 @@ public interface UserService {
 
     UserDto createUser(UserDto userDto);
     UserDto getUserById(Long userId);
-    List getAllUsers();
+    List<UserDto> getAllUsers();
     UserDto updatePassword(Long userId, UserDto updatedPassword);
 }

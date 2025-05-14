@@ -1,11 +1,17 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public class Admin extends User {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "admin")
+public class Admin extends  User{
+//        @Id
+//        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long adminId;
 }
