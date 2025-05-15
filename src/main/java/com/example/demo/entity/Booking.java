@@ -17,10 +17,10 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String bookingID;
+    private Long bookingID;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "booking_id")
+    @JoinColumn(name = "student_id")
     private Student student;
 
     private String roomNumber;
@@ -28,9 +28,10 @@ public class Booking {
     private LocalDateTime timeSlot;
 
 
-
-
-
-
-
+    public Booking(Student student, String roomNumber, LocalDate date, LocalDateTime timeSlot) {
+        this.student = student;
+        this.roomNumber = roomNumber;
+        this.date = date;
+        this.timeSlot = timeSlot;
+    }
 }
