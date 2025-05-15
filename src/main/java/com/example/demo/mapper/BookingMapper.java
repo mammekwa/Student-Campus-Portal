@@ -7,6 +7,7 @@ import com.example.demo.entity.Student;
 public class BookingMapper {
     public static BookingDto mapToBookingDto(Booking booking){
         return new  BookingDto(
+                booking.getBookingID(),
                 booking.getStudent().getUserId(),
                 booking.getRoomNumber(),
                 booking.getDate(),

@@ -45,7 +45,7 @@ public class BookingServiceImpl implements BookingService {
 
         Booking saved = bookingRepository.save(booking);
         return BookingMapper.mapToBookingDto(saved);
-       //return new BookingDto(saved.getStudent().getUserId(), saved.getRoomNumber(), saved.getDate(), saved.getTimeSlot());
+
     }
 
 

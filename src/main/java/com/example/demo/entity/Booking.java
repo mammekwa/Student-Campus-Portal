@@ -19,10 +19,9 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bookingID;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "student_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private Student student;
-
     private String roomNumber;
     private LocalDate date;
     private LocalDateTime timeSlot;
