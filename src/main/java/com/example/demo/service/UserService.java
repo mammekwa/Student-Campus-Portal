@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.dto.UserDto;
+import com.example.demo.entity.User;
+
 import java.util.List;
 
 public interface UserService {
@@ -9,4 +11,5 @@ public interface UserService {
     UserDto getUserById(Long userId);
     List<UserDto> getAllUsers();
     UserDto updatePassword(Long userId, UserDto updatedPassword);
+    User authenticate(String email, String password);
 }

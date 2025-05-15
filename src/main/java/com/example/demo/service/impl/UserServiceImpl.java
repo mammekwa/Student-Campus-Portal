@@ -49,6 +49,17 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return UserMapper.mapToUserDto(user);
     }
+    @Override
+    public User authenticate(String email, String password) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+        if (passwordEncoder.matches(password, user.getPassword())) {
+            return user;
+        } else {
+            return null;
+        }
+    }
 
 
 }
